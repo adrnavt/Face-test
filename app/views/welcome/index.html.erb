@@ -1,0 +1,17 @@
+<h1>Facebook Connect Test</h1>
+<p>Log in with the "Sign in with Facebook" button to see your profile information.</p>
+<hr />
+<% if current_user %>
+  <h2>Facebook Profile Information:</h2>
+       <strong>Picture:</strong><img width="25" style="border: solid 1px lightgrey;" src="<%= current_user.image %>"><br />
+          <strong>Name:</strong> <%= current_user.name %><br />
+           <strong>Nickname:</strong> <%= current_user.nickname %><br />
+            <strong>Email:</strong> <%= current_user.email %><br />
+             <strong>Location:</strong> <%= current_user.location %><br />
+             <strong>Gender:</strong> <%= current_user.gender %><br />
+          <% else %>
+            <h2>This is where your information will be displayed.</h2>
+            <p>You haven't log in yet, please <%= link_to "Sign in with Facebook", "/auth/facebook"%> to show your information.</p>
+<%end%>
+
+        
